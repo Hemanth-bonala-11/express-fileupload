@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+require('./config/DbConfig.js').dbconnect()
 
 const PORT = process.env.PUBLIC_PORT || 4000;
 
