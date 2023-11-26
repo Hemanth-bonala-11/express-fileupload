@@ -6,8 +6,9 @@ exports.localFileUpload = (req,res)=>{
         const {name,email}=req.body;
         const file=req.files.file
         console.log(file)
+        const extension = file.name.split(".")[1]
 
-        let path = process.env.PATH + Date.now()
+        let path = process.env.PATH + Date.now()+"."+extension;
 
         file.mv(path,(err)=>{
             console.log(err);
